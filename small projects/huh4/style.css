@@ -1,0 +1,52 @@
+body{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.mole{
+    overflow: hidden;
+    background-image: url(/mole_small.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: moleAnimation .5s ease;
+}
+
+@keyframes moleAnimation {
+    0%{top:100%;}
+    50%{top:50%;}
+    100%{top:0%;}
+}
+
+h1{
+    color: #9775;
+}
+
+.grid{
+    width: 600px;
+    height: 600px;
+    background: #d6b258;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: url(cursor.cur), auto;
+    user-select: none;
+    overflow: hidden;
+    
+}
+
+.sqare{
+    border: 1px solid red;
+    position: relative; 
+} 
+
+.info{
+    width: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    color: #b47b48;
+    
+}

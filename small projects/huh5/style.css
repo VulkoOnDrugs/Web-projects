@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;1,900&display=swap');
+
+:root{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --colums: 7;
+    --rows: 6;
+    --boardWidht: 700px;
+    --border: 2px;
+    --tileMargin: 5px;
+    --boardHeight:calc(var(--boardWidht) - 100px);
+    --spaceing: calc(var(--tileMargin) * 2 * var(--colums) + var(--border) * 2 * var(--colums));
+    --tileDim: calc((var(--boardWidht) - var(--spaceing)) / var(--colums))
+} 
+
+body{
+    font-family: 'Source Code Pro','monospace';
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #222021;
+    height: 100vh;
+    color: grey;
+    user-select: none;
+}
+
+h1{
+    width: var(--boardWidht);
+    border: var(--border) solid gray;
+    border-radius: 7px ;
+    letter-spacing: -3px;
+}
+
+.info{
+    width: calc(var(--boardWidht)+ var(--border) * 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    height: 40px;
+}
+
+.message,
+.new-game,
+.display{
+    border-radius: 7px;
+    width: calc( var(--boardWidht) / 3 - 10px);
+    border: var(--border) solid grey;
+    height: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    font-weight: 400;
+    letter-spacing: -1px;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-game{
+    cursor: pointer;
+}
+
+.new-game:hover{
+    background-color: #363636;
+    color: whitesmoke;
+    transition: all .4s;
+}
+
+#board{
+    height: var(--boardHeight);
+    width: var(--boardWidht);
+    border: var(--border) solid grey;
+    border-radius: 7px;
+    margin:0 auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tile{
+    height: var(--tileDim);
+    width: var(--tileDim);
+    margin: var(--tileMargin);
+    border: var(--border) solid grey;
+    border-radius: 50%;   
+    position: relative;
+}
+
+.yellow-piece{
+    background-color: gold;
+}
+
+.red-piece{
+    background-color: red;
+}
+
+.yellow-piece,
+.red-piece{
+    animation: yAnime 1.5s ease;
+    transition: all .1s;
+
+}
+
+@keyframes yAnime{
+    0%{bottom: 100%;}
+    100%{bottom: 0;}
+}
+
+.winWinner{
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    width: var(--boardWidht);
+    height: var(--boardHeight);
+    left: 0;
+    top: 0;
+    transition: all 0.5s;
+    z-index: 100;
+}
+
+.board-text{
+    position: absolute;
+    font-size: 10rem;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 103;
+}
+
+.fill{
+    width: var(--boardWidht);
+    height: var(--boardHeight);
+    position: absolute;
+    background-image: url(/connect4.svg);
+    z-index: 100;
+    pointer-events: none ;
+}

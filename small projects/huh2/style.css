@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Permanent Marker', cursive;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+    flex-direction: column;
+}
+
+#gameboard{
+    height: 600px;
+    width: 600px;
+    background-color: purple;
+    box-shadow: 0 0 7px black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square{
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
+    width: 200px;
+    height: 200px;
+}
+
+.square:nth-child(3),
+.square:nth-child(6),
+.square:nth-child(9){
+    border-right: none;
+}
+
+.square:nth-child(7),
+.square:nth-child(8),
+.square:nth-child(9){
+    border-bottom: none;
+}
+
+.circle,.cross{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.circle::after{
+    content: '0';
+    font-size: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: red;
+}
+
+.cross::after{
+    content: 'X';
+    font-size: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: blue;
+}
+
+#info{
+    color: blueviolet;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+button{
+    width: 170px;
+    height: 40px;
+    margin-top: 25px;
+    font-size: 25px;
+    border-radius: 25px;
+    border: 2px solid white;
+    background-color: white;
+    transition: all .3s;
+}
+
+button:hover{
+    color: white;
+    background-color: black;
+}

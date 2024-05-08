@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #280137;
+    box-sizing: border-box;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.gameGrid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 630px;
+    height: 450px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.info,
+.message{
+    width: 630px;
+    display: flex;
+    font-size: 19px;
+}
+
+.info h3,
+.message h3{   
+    width: 100%;
+    height: 52px;
+    display: flex;
+    border-radius: 20px;
+    border: 1px solid gray;
+    align-items: center;
+    justify-content: center;
+}
+
+#timer,
+#score,
+#flips{
+    padding-left: 7px;
+}

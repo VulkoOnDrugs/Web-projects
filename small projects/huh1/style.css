@@ -1,0 +1,28 @@
+body{background: linear-gradient(111.3deg, rgb(74, 105, 187) 9.6%, rgb(205, 77, 204) 93.6%);}
+html {
+    height: 100%;
+  }
+  body {
+    min-height: 100%;
+  }
+
+.image{
+    position:absolute;
+    margin-right: 25px;
+}
+  td {
+    width: 150px;
+    height: 150px;
+  }
+  table {
+    margin: 5px auto;
+    display: flex;
+  }
+  .vert {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
+  .hori {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
